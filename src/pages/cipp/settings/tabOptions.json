@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
   {
     "label": "General",
@@ -28,3 +29,39 @@
     "path": "/cipp/settings/licenses"
   }
 ]
+=======
+[
+  {
+    "label": "General",
+    "path": "/cipp/settings"
+  },
+  {
+    "label": "Permissions",
+    "path": "/cipp/settings/permissions"
+  },
+  {
+    "label": "Tenants",
+    "path": "/cipp/settings/tenants"
+  },
+  {
+    "label": "Backend",
+    "path": "/cipp/settings/backend"
+  },
+  {
+    "label": "Notifications",
+    "path": "/cipp/settings/notifications"
+  },
+  {
+    "label": "Partner Webhooks",
+    "path": "/cipp/settings/partner-webhooks"
+  },
+  {
+    "label": "Licenses",
+    "path": "/cipp/settings/licenses"
+  },
+  {
+    "label": "Global Variables",
+    "path": "/cipp/settings/global-variables"
+  }
+]
+>>>>>>> 36607733960427a2e6bf87b2d42254c2872bad5c

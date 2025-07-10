@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
   {
     "label": "Tenant Mode",
@@ -20,3 +21,27 @@
     "path": "/cipp/super-admin/sam-app-permissions"
   }
 ]
+=======
+[
+  {
+    "label": "Tenant Mode",
+    "path": "/cipp/super-admin/tenant-mode"
+  },
+  {
+    "label": "Function Offloading",
+    "path": "/cipp/super-admin/function-offloading"
+  },
+  {
+    "label": "CIPP Roles",
+    "path": "/cipp/super-admin/cipp-roles"
+  },
+  {
+    "label": "SAM App Roles",
+    "path": "/cipp/super-admin/sam-app-roles"
+  },
+  {
+    "label": "SAM App Permissions",
+    "path": "/cipp/super-admin/sam-app-permissions"
+  }
+]
+>>>>>>> 36607733960427a2e6bf87b2d42254c2872bad5c

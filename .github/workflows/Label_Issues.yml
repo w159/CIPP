@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 name: Label Issues
 on:
@@ -27,3 +28,34 @@ jobs:
         with:
           add-labels: 'enhancement, no-priority'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+=======
+---
+name: Label Issues
+on:
+  issues:
+    types:
+      - opened
+jobs:
+  label_issues_bugs:
+    if: github.repository_owner == 'KelvinTegelaar' && contains(github.event.issue.title, 'Bug')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Label Issues
+        uses: andymckay/labeler@5c59dabdfd4dd5bd9c6e6d255b01b9d764af4414
+        with:
+          add-labels: 'not-assigned'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+  label_issues_frs:
+    if: github.repository_owner == 'KelvinTegelaar' && contains(github.event.issue.title, 'Feature')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Label Issues
+        uses: andymckay/labeler@5c59dabdfd4dd5bd9c6e6d255b01b9d764af4414
+        with:
+          add-labels: 'enhancement, not-assigned'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+>>>>>>> 36607733960427a2e6bf87b2d42254c2872bad5c

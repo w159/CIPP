@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export const getCippFilterVariant = (providedColumnKeys) => {
   const timeAgoArray = [
     "ExecutedTime",
@@ -47,3 +48,62 @@ export const getCippFilterVariant = (providedColumnKeys) => {
       return { filterVariant: "text" };
   }
 };
+=======
+export const getCippFilterVariant = (providedColumnKeys) => {
+  const timeAgoArray = [
+    "ExecutedTime",
+    "ScheduledTime",
+    "Timestamp",
+    "DateTime",
+    "LastRun",
+    "LastRefresh",
+    "createdDateTime",
+    "activatedDateTime",
+    "lastModifiedDateTime",
+    "endDateTime",
+    "ReceivedTime",
+    "Expires",
+    "updatedAt",
+    "createdAt",
+    "Received",
+    "Date",
+    "WhenCreated",
+    "WhenChanged",
+  ];
+  const matchDateTime = /[dD]ate[tT]ime/;
+  if (timeAgoArray.includes(providedColumnKeys) || matchDateTime.test(providedColumnKeys)) {
+    return {
+      filterVariant: "datetime-range",
+      sortingFn: "dateTimeNullsLast",
+      filterFn: "betweenInclusive",
+    };
+  }
+
+  switch (providedColumnKeys) {
+    case "assignedLicenses":
+      return {
+        filterVariant: "multi-select",
+        sortingFn: "alphanumeric",
+        filterFn: "arrIncludesSome",
+      };
+    case "Tenant":
+      return {
+        filterVariant: "multi-select",
+        sortingFn: "alphanumeric",
+        filterFn: "arrIncludesSome",
+      };
+    case "accountEnabled":
+      return {
+        filterVariant: "select",
+      };
+    case "primDomain":
+      return "select";
+    case "number":
+      return "range";
+    case "id":
+      return "text";
+    default:
+      return { filterVariant: "text" };
+  }
+};
+>>>>>>> 36607733960427a2e6bf87b2d42254c2872bad5c

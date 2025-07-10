@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 name: Add Comment
 on:
@@ -28,3 +29,27 @@ jobs:
     steps:
       - name: Add Comment
         uses: peter-evans/create-or-update@v3
+=======
+---
+name: Add Comment
+on:
+  issues:
+    types:
+      - labeled
+jobs:
+  add-comment_bug:
+    if: github.repository_owner == 'KelvinTegelaar' && github.event.label.name == 'unconfirmed-by-user'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Add Comment
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Thank you for reporting a potential bug.  If you would like to work on this bug, please comment:
+            > I would like to work on this please!
+            
+            Thank you for helping us maintain the project!
+>>>>>>> 36607733960427a2e6bf87b2d42254c2872bad5c
